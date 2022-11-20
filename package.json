@@ -1,6 +1,6 @@
 {
   "name": "funcexec",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "FunC executor for main() function",
   "main": "run.js",
   "bin": {
@@ -13,5 +13,6 @@
     "ton": "^12.1.5",
     "ton-contract-executor": "^0.6.0"
   },
-  "type": "module"
+  "type": "module",
+  "keywords": ["func", "executor", "ton"]
 }
