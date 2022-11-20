@@ -5,7 +5,7 @@ import { SmartContract, TvmRunnerAsynchronous } from 'ton-contract-executor'
 import { Cell, InternalMessage, CommonMessageInfo, CellMessage, Address } from 'ton'
 import * as fs from 'fs'
 
-async function execute (sourceFile) {
+async function execute (sourceFile, include_stdlib) {
     const source = fs.readFileSync(sourceFile).toString()
     const stdlib = `
         forall X -> tuple cons(X head, tuple tail) asm "CONS";
@@ -189,12 +189,19 @@ async function execute (sourceFile) {
         builder store_builder(builder to, builder from) asm "STBR";
     `
 
+    var entryPoints
+    if (include_stdlib) {
+        entryPoints = ['stdlib.fc', 'main.fc']
+    }
+    else [
+        entryPoints = ['main.fc']
+    ]
     const compileResult = await compileFunc({
         sources: {
             'stdlib.fc': stdlib,
             'main.fc': source,
         },
-        entryPoints: ['stdlib.fc', 'main.fc'],
+        entryPoints
     })
 
     if (compileResult.status === 'error') throw new Error(compileResult.message)
@@ -220,10 +227,11 @@ async function execute (sourceFile) {
 }
 
 if (process.argv.length >= 3) {
-    const filename = process.argv.at(-1)
-    execute(filename)
+    const filename = process.argv.at(2)
+    const include_stdlib = !process.argv.includes('--no-stdlib')
+    execute(filename, include_stdlib)
 }
 else {
     console.log(`Usage:
-    fce FILENAME`)
+  fce filename [--no-stdlib]`)
 }

@@ -10,7 +10,7 @@ npm i -g funcexec
 ## Usage
 
 ```bash
-fce FUNC_SOURCE_FILENAME
+fce filename [--no-stdlib]
 ```
 
 Example:
