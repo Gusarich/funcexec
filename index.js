@@ -219,4 +219,11 @@ async function execute (sourceFile) {
     await TvmRunnerAsynchronous.getShared().cleanup()
 }
 
-execute(process.argv.at(-1))
+if (process.argv.length >= 3) {
+    const filename = process.argv.at(-1)
+    execute(filename)
+}
+else {
+    console.log(`Usage:
+    fce FILENAME`)
+}
