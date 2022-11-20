@@ -10,11 +10,11 @@ npm i -g funcexec
 ## Usage
 
 ```bash
-fcexec FUNC_SOURCE_FILENAME
+fce FUNC_SOURCE_FILENAME
 ```
 
 Example:
 
 ```bash
-fcexec contract.fc
+fce contract.fc
 ```

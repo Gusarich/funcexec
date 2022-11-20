@@ -1,10 +1,10 @@
 {
   "name": "funcexec",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "FunC executor for main() function",
-  "main": "run.js",
+  "main": "index.js",
   "bin": {
-    "fce": "run.js"
+    "fce": "index.js"
   },
   "author": "Gusarich",
   "license": "ISC",
