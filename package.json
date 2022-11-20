@@ -1,6 +1,6 @@
 {
   "name": "funcexec",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "FunC executor for main() function",
   "main": "index.js",
   "bin": {
