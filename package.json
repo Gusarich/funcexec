@@ -1,6 +1,6 @@
 {
   "name": "funcexec",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "FunC executor for main() function",
   "main": "index.js",
   "bin": {
@@ -9,10 +9,14 @@
   "author": "Gusarich",
   "license": "ISC",
   "dependencies": {
-    "@ton-community/func-js": "^0.1.5",
+    "@ton-community/func-js": "^0.4.1",
     "ton": "^12.1.5",
     "ton-contract-executor": "^0.6.0"
   },
   "type": "module",
-  "keywords": ["func", "executor", "ton"]
+  "keywords": [
+    "func",
+    "executor",
+    "ton"
+  ]
 }
