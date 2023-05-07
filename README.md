@@ -54,6 +54,8 @@ async function main() {
         int a = 1;
         int b = 2;
         int c = a + b;
+        ~dump("123");
+        ~dump(a);
         ~dump(c);
     }`;
 
