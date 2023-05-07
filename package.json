@@ -1,22 +1,32 @@
 {
-  "name": "funcexec",
-  "version": "1.0.6",
-  "description": "FunC executor for main() function",
-  "main": "index.js",
-  "bin": {
-    "fce": "index.js"
-  },
-  "author": "Gusarich",
-  "license": "ISC",
-  "dependencies": {
-    "@ton-community/func-js": "^0.4.1",
-    "ton": "^12.1.5",
-    "ton-contract-executor": "^0.6.0"
-  },
-  "type": "module",
-  "keywords": [
-    "func",
-    "executor",
-    "ton"
-  ]
+    "name": "funcexec",
+    "version": "1.0.6",
+    "description": "FunC executor for main() function",
+    "scripts": {
+        "build": "tsc --build --clean && tsc --build",
+        "release": "yarn build && yarn publish --access public"
+    },
+    "main": "dist/index.js",
+    "bin": {
+        "fce": "./dist/cli.js"
+    },
+    "author": "Gusarich",
+    "license": "ISC",
+    "dependencies": {
+        "@ton-community/func-js": "^0.6.1",
+        "buffer": "^6.0.3",
+        "ton": "^13.4.1",
+        "ton-contract-executor": "^0.7.0",
+        "ton-core": "^0.49.0",
+        "ton-crypto": "^3.2.0",
+        "typescript": "^5.0.4"
+    },
+    "keywords": [
+        "func",
+        "executor",
+        "ton"
+    ],
+    "devDependencies": {
+        "@types/node": "^20.1.0"
+    }
 }
