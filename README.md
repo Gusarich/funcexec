@@ -67,7 +67,7 @@ main();
 
 Example output:
 
-```json
+```
 {
   type: 'success',
   exit_code: 0,
